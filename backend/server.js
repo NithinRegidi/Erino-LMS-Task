@@ -4,6 +4,7 @@ const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const connectDB = require("./config/db");
 const authRoutes = require("./routes/authRoutes");
+const leadRoutes = require("./routes/leadRoutes");
 
 dotenv.config();
 connectDB();
@@ -25,6 +26,7 @@ app.get("/", (req, res) => {
 
 
 app.use("/api/auth", authRoutes);
+app.use("/api/leads", leadRoutes);
 
 
 const PORT = process.env.PORT || 5000;
