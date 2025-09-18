@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Erino • Lead Management System</title>
+    <meta name="description" content="Erino Lead Management System — manage leads, filters, and pipelines with ease." />
+    <style>
+      :root {
+        --bg: #0f172a;
+        --card: rgba(255,255,255,0.03);
+        --text: #e5e7eb;
+        --muted: #9ca3af;
+        --primary: #2563eb;
+        --ring: rgba(37,99,235,0.35);
+      }
+      html, body, #root { height: 100%; margin: 0; }
+      body {
+        font-family: 'Inter', system-ui, sans-serif;
+        color: var(--text);
+        background: radial-gradient(1200px 600px at 20% -10%, #1f2937 0%, var(--bg) 50%);
+        background-attachment: fixed;
+      }
+      .shell {
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 24px;
+      }
+      .card {
+        width: min(92vw, 400px);
+        background: var(--card);
+        border-radius: 16px;
+        padding: 32px 28px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+        text-align: center;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        font-weight: 700;
+        font-size: 22px;
+        margin-bottom: 10px;
+      }
+      .brand-badge {
+        width: 28px; height: 28px; border-radius: 8px;
+        background: linear-gradient(135deg, var(--primary), #60a5fa);
+        box-shadow: 0 0 0 4px var(--ring);
+      }
+      .subtitle { color: var(--muted); margin-bottom: 18px; font-size: 15px; }
+      .loading {
+        display: flex; align-items: center; justify-content: center; gap: 10px;
+        color: var(--muted); margin-bottom: 12px;
+      }
+      .spinner {
+        width: 18px; height: 18px; border-radius: 50%;
+        border: 2px solid rgba(255,255,255,0.2);
+        border-top-color: var(--primary);
+        animation: spin 0.8s linear infinite;
+      }
+      @keyframes spin { to { transform: rotate(360deg); } }
+      .hint { font-size: 13px; color: var(--muted); margin-top: 10px; }
+      noscript {
+        display: block; margin-top: 14px; color: #fecaca;
+        background: rgba(239,68,68,0.12); padding: 10px 12px; border-radius: 10px;
+        border: 1px solid rgba(239,68,68,0.35);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <div class="shell">
+        <div class="card">
+          <div class="brand">
+            <div class="brand-badge" aria-hidden="true"></div>
+            Erino Lead Management
+          </div>
+          <p class="subtitle">Loading application…</p>
+          <div class="loading">
+            <div class="spinner" aria-hidden="true"></div>
+            <span>Preparing dashboard</span>
+          </div>
+          <p class="hint">If this takes long, check your network or try refreshing.</p>
+          <noscript>JavaScript is required to run this app. Please enable it and reload.</noscript>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

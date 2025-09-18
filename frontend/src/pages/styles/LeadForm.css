@@ -1,0 +1,208 @@
+.lead-form-page {
+  font-family: Inter, system-ui, sans-serif;
+  padding: 32px clamp(16px,2.5vw,48px);
+  background: linear-gradient(140deg,#0f172a,#0b1120);
+  min-height: calc(100vh - 60px);
+  color: #e5e7eb;
+  display: block;
+}
+
+.lead-form-card {
+  max-width: 860px;
+  margin: 0 auto;
+  background: linear-gradient(180deg, rgba(30,41,59,0.55), rgba(17,24,39,0.6));
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 18px;
+  padding: 34px 34px 42px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 20px 40px -18px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.05);
+  animation: lfFade .55s ease;
+}
+
+.lead-form-title {
+  margin: 0 0 28px;
+  font-size: 30px;
+  font-weight: 700;
+  background: linear-gradient(90deg,#ffffff,#cbd5e1);
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: -.5px;
+}
+/* ...existing code... */
+
+.lead-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Changed to always have 2 columns */
+  gap: 20px;  /* Simplified gap */
+  margin-bottom: 24px;
+}
+
+/* Form group spacing fix */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+  margin-bottom: 16px; /* Add bottom margin for separation */
+}
+
+/* Ensure full-width items span both columns */
+.full-width {
+  grid-column: 1 / span 2;
+}
+
+/* Adjust mobile breakpoint */
+@media (max-width: 640px) {
+  .lead-form-grid {
+    grid-template-columns: 1fr; /* Stack on mobile */
+  }
+
+  .full-width {
+    grid-column: 1; /* Reset span on mobile */
+  }
+}
+
+.form-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #94a3b8;
+  letter-spacing: .3px;
+}
+
+/* Input field adjustments */
+.form-input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(17,24,39,0.85);
+  color: #e5e7eb;
+  outline: none;
+  font-size: 14px;
+  line-height: 1.5; /* Increased line height */
+  transition: .25s;
+  height: 45px; /* Fixed height */
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.form-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59,130,246,0.35);
+  background: rgba(17,24,39,0.95);
+}
+
+.form-input::placeholder {
+  color: #64748b;
+  letter-spacing: .4px;
+}
+
+.checkbox-row {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(17,24,39,0.6);
+  border-radius: 14px;
+}
+
+.checkbox-input {
+  width: 18px;
+  height: 18px;
+  accent-color: #2563eb;
+  cursor: pointer;
+}
+
+.checkbox-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #e2e8f0;
+  cursor: pointer;
+}
+
+.form-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.btn {
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: .4px;
+  padding: 12px 22px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: .25s;
+  position: relative;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg,#2563eb,#3b82f6);
+  color: #fff;
+  box-shadow: 0 8px 24px -10px #2563eb, 0 0 0 1px #3b82f6 inset;
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px -10px #2563eb, 0 0 0 1px #60a5fa inset;
+}
+
+.btn-primary:active:not(:disabled) {
+  transform: translateY(0);
+  filter: brightness(.93);
+}
+
+.btn-secondary {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.14);
+  color: #cbd5e1;
+}
+
+.btn-secondary:hover {
+  background: rgba(255,255,255,0.08);
+  color: #ffffff;
+}
+
+.btn:disabled {
+  opacity: .55;
+  cursor: not-allowed;
+}
+
+.form-error {
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: rgba(239,68,68,0.14);
+  color: #fecaca;
+  border: 1px solid rgba(239,68,68,0.45);
+  font-size: 14px;
+  margin: -4px 0 22px;
+  text-align: center;
+  backdrop-filter: blur(6px);
+}
+
+@keyframes lfFade {
+  from { opacity:0; transform: translateY(14px); }
+  to { opacity:1; transform: translateY(0); }
+}
+
+@media (max-width: 640px) {
+  .lead-form-card {
+    padding: 26px 22px 34px;
+  }
+  .lead-form-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .form-actions {
+    flex-direction: column;
+  }
+  .btn {
+    width: 100%;
+  }
+}

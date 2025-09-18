@@ -1,0 +1,251 @@
+/* Main container styles */
+.leads-page {
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Header styles */
+.leads-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.leads-title {
+  color: #e0e0e0;
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.add-lead-button {
+  background-color: #2c7be5;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.add-lead-button:hover {
+  background-color: #1a68d1;
+}
+
+/* Filter bar styles */
+.filter-bar {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.filter-input {
+  padding: 0.5rem 1rem;
+  border: 1px solid #4a4a4a;
+  border-radius: 4px;
+  background-color: #2b2b2b;
+  color: #e0e0e0;
+  min-width: 200px;
+}
+
+.filter-input:focus {
+  outline: none;
+  border-color: #2c7be5;
+}
+
+.search-button, .reset-button {
+  padding: 0.5rem 1.2rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.search-button {
+  background-color: #2c7be5;
+  color: white;
+}
+
+.search-button:hover:not(:disabled) {
+  background-color: #1a68d1;
+}
+
+.reset-button {
+  background-color: #4a4a4a;
+  color: #e0e0e0;
+}
+
+.reset-button:hover:not(:disabled) {
+  background-color: #5a5a5a;
+}
+
+.search-button:disabled, .reset-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Active filters display */
+.active-filters {
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #2b2b2b;
+  border-radius: 4px;
+  color: #e0e0e0;
+  font-size: 0.9rem;
+}
+
+/* Grid container styles */
+.grid-container {
+  margin-bottom: 1.5rem;
+  --ag-odd-row-background-color: #1e1e1e;
+  --ag-header-background-color: #2b2b2b;
+  --ag-header-foreground-color: #e0e0e0;
+  --ag-cell-horizontal-padding: 1rem;
+  border: 1px solid #4a4a4a;
+  border-radius: 4px;
+}
+
+/* Status pill styles */
+.status-pill {
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.status-new {
+  background-color: #3498db;
+  color: white;
+}
+
+.status-contacted {
+  background-color: #f39c12;
+  color: white;
+}
+
+.status-qualified {
+  background-color: #2ecc71;
+  color: white;
+}
+
+.status-lost {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.status-won {
+  background-color: #27ae60;
+  color: white;
+}
+
+/* Score styles */
+.score-high {
+  color: #2ecc71;
+  font-weight: 500;
+}
+
+.score-mid {
+  color: #f39c12;
+  font-weight: 500;
+}
+
+.score-low {
+  color: #e74c3c;
+  font-weight: 500;
+}
+
+/* Action buttons styles */
+.action-cell-container {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.edit-button, .delete-button {
+  padding: 0.3rem 0.8rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.edit-button {
+  background-color: #2c7be5;
+  color: white;
+}
+
+.edit-button:hover {
+  background-color: #1a68d1;
+}
+
+.delete-button {
+  background-color: #dc3545;
+  color: white;
+}
+
+.delete-button:hover {
+  background-color: #c82333;
+}
+
+/* Money value cell style */
+.cell-money {
+  color: #2ecc71;
+  font-weight: 500;
+}
+
+/* Error message style */
+.error-message {
+  color: #dc3545;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  background-color: rgba(220, 53, 69, 0.1);
+  border-radius: 4px;
+}
+
+/* Pagination styles */
+.pagination-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  color: #e0e0e0;
+}
+
+.pagination-button {
+  padding: 0.5rem 1rem;
+  background-color: #2b2b2b;
+  border: 1px solid #4a4a4a;
+  border-radius: 4px;
+  color: #e0e0e0;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.pagination-button:hover:not(:disabled) {
+  background-color: #3b3b3b;
+}
+
+.pagination-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.limit-select {
+  padding: 0.5rem;
+  background-color: #2b2b2b;
+  border: 1px solid #4a4a4a;
+  border-radius: 4px;
+  color: #e0e0e0;
+  cursor: pointer;
+}
+
+/* Grid overlay messages */
+.grid-overlay {
+  color: #e0e0e0;
+  font-size: 1.1rem;
+}
